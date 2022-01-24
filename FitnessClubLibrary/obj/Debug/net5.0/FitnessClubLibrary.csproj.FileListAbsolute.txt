@@ -1,0 +1,15 @@
+D:\BSUIR\FitnessClubLibrary\bin\Debug\net5.0\FitnessClubLibrary.deps.json
+D:\BSUIR\FitnessClubLibrary\bin\Debug\net5.0\FitnessClubLibrary.runtimeconfig.json
+D:\BSUIR\FitnessClubLibrary\bin\Debug\net5.0\FitnessClubLibrary.runtimeconfig.dev.json
+D:\BSUIR\FitnessClubLibrary\bin\Debug\net5.0\FitnessClubLibrary.dll
+D:\BSUIR\FitnessClubLibrary\bin\Debug\net5.0\ref\FitnessClubLibrary.dll
+D:\BSUIR\FitnessClubLibrary\bin\Debug\net5.0\FitnessClubLibrary.pdb
+D:\BSUIR\FitnessClubLibrary\obj\Debug\net5.0\FitnessClubLibrary.csproj.AssemblyReference.cache
+D:\BSUIR\FitnessClubLibrary\obj\Debug\net5.0\FitnessClubLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\BSUIR\FitnessClubLibrary\obj\Debug\net5.0\FitnessClubLibrary.AssemblyInfoInputs.cache
+D:\BSUIR\FitnessClubLibrary\obj\Debug\net5.0\FitnessClubLibrary.AssemblyInfo.cs
+D:\BSUIR\FitnessClubLibrary\obj\Debug\net5.0\FitnessClubLibrary.csproj.CoreCompileInputs.cache
+D:\BSUIR\FitnessClubLibrary\obj\Debug\net5.0\FitnessClubLibrary.dll
+D:\BSUIR\FitnessClubLibrary\obj\Debug\net5.0\ref\FitnessClubLibrary.dll
+D:\BSUIR\FitnessClubLibrary\obj\Debug\net5.0\FitnessClubLibrary.pdb
+D:\BSUIR\FitnessClubLibrary\obj\Debug\net5.0\FitnessClubLibrary.genruntimeconfig.cache
