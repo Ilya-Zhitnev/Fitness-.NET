@@ -17,15 +17,16 @@ namespace FitnessClub_.NET
         public FitnessClub_Form()
         {
             InitializeComponent();
+
             using (FitnessClubContext db = new FitnessClubContext())
             {
                 var dataCl = from cl in db.Clients
-                              join ch in db.Coaches
+                             join ch in db.Coaches
                               on cl.Coach equals ch.Id
-                             select new (cl.Id,cl.Fio);
+                             select new {Id = cl.Id, FIO_Client=cl.Fio, PHONE = cl.Phone, Adress = cl.Adress, NameCoach = ch.Fio, PhoneCoach=ch.Phone};
                 dataGridViewClient.DataSource = dataCl.ToList();
 
-                var dataCoach = (from d in db.Coaches select d);
+                var dataCoach = (from ch in db.Coaches select new { ch.Id,ch.Fio, ch.Phone, ch.WorkLevel, ch.Rank });
                 dataGridViewCoach.DataSource = dataCoach.ToList();
             }
         }
@@ -126,6 +127,65 @@ namespace FitnessClub_.NET
                 var dataCoach = (from d in db.Coaches select d);
                 dataGridViewCoach.DataSource = dataCoach.ToList();
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "" || textBox2.Text == null)
+            {
+                MessageBox.Show("Ввведите значение для поиска!!!!");
+            }
+                using (FitnessClubContext db = new FitnessClubContext())
+                {
+                    var clients = (from cl in db.Clients
+                                   join ch in db.Coaches 
+                                   on cl.Coach equals ch.Id
+                                   where cl.Fio.Contains(Convert.ToString(textBox2.Text))
+                                   //EF.Functions.Like(cl.Fio.ToString(),"%'"+ Convert.ToString(textBox3.Text) + "'%")
+                                   select new { Id = cl.Id, FIO_Client = cl.Fio, PHONE = cl.Phone, Adress = cl.Adress, NameCoach = ch.Fio, PhoneCoach = ch.Phone }).ToList();
+
+                    dataGridViewClient.DataSource = clients.ToList();
+                }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+            using (FitnessClubContext db = new FitnessClubContext())
+            {
+                var dataCl = from cl in db.Clients
+                             join ch in db.Coaches
+                              on cl.Coach equals ch.Id
+                             select new { Id = cl.Id, FIO_Client = cl.Fio, PHONE = cl.Phone, Adress = cl.Adress, NameCoach = ch.Fio, PhoneCoach = ch.Phone };
+                dataGridViewClient.DataSource = dataCl.ToList();
+
+                var dataCoach = (from ch in db.Coaches select new { ch.Id, ch.Fio, ch.Phone, ch.WorkLevel, ch.Rank });
+                dataGridViewCoach.DataSource = dataCoach.ToList();
+            }
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox1.Text == null)
+            {
+                MessageBox.Show("Ввведите значение для поиска!!!!");
+            }
+            
+            using (FitnessClubContext db = new FitnessClubContext())
+                {
+                    var coach = (from ch in db.Coaches
+                                 where ch.Fio.Contains(Convert.ToString(textBox1.Text))
+                                 //EF.Functions.Like(cl.Fio.ToString(),"%'"+ Convert.ToString(textBox3.Text) + "'%")
+                                 select new { ch.Id, ch.Fio, ch.Phone, ch.WorkLevel, ch.Rank }).ToList();
+
+                    dataGridViewCoach.DataSource = coach.ToList();
+                }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
