@@ -174,10 +174,12 @@ namespace FitnessClub_.NET
             
             using (FitnessClubContext db = new FitnessClubContext())
                 {
-                    var coach = (from ch in db.Coaches
-                                 where ch.Fio.Contains(Convert.ToString(textBox1.Text))
-                                 //EF.Functions.Like(cl.Fio.ToString(),"%'"+ Convert.ToString(textBox3.Text) + "'%")
-                                 select new { ch.Id, ch.Fio, ch.Phone, ch.WorkLevel, ch.Rank }).ToList();
+                var coach = (from ch in db.Coaches
+                             join cl in db.Clients
+                             on ch.Id equals cl.Coach
+                             where ch.Fio.Contains(Convert.ToString(textBox1.Text))
+                             //EF.Functions.Like(cl.Fio.ToString(),"%'"+ Convert.ToString(textBox3.Text) + "'%")
+                             select new { Id=ch.Id, FIO_Coach=ch.Fio, Phone=ch.Phone, WLevel=ch.WorkLevel, Rank=ch.Rank, FIO_Clients=cl.Fio }).ToList();
 
                     dataGridViewCoach.DataSource = coach.ToList();
                 }

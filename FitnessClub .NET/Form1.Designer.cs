@@ -33,25 +33,25 @@ namespace FitnessClub_.NET
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewClient = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewCoach = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.dataGridViewCoach = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoach)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,8 +92,8 @@ namespace FitnessClub_.NET
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.dataGridViewCoach);
+            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -101,6 +101,22 @@ namespace FitnessClub_.NET
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Тренера";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewCoach
+            // 
+            this.dataGridViewCoach.AllowUserToAddRows = false;
+            this.dataGridViewCoach.AllowUserToDeleteRows = false;
+            this.dataGridViewCoach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCoach.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewCoach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCoach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewCoach.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewCoach.Name = "dataGridViewCoach";
+            this.dataGridViewCoach.ReadOnly = true;
+            this.dataGridViewCoach.RowTemplate.Height = 25;
+            this.dataGridViewCoach.Size = new System.Drawing.Size(786, 367);
+            this.dataGridViewCoach.TabIndex = 6;
+            this.dataGridViewCoach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // groupBox2
             // 
@@ -144,22 +160,6 @@ namespace FitnessClub_.NET
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // dataGridViewCoach
-            // 
-            this.dataGridViewCoach.AllowUserToAddRows = false;
-            this.dataGridViewCoach.AllowUserToDeleteRows = false;
-            this.dataGridViewCoach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewCoach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewCoach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCoach.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewCoach.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewCoach.Name = "dataGridViewCoach";
-            this.dataGridViewCoach.ReadOnly = true;
-            this.dataGridViewCoach.RowTemplate.Height = 25;
-            this.dataGridViewCoach.Size = new System.Drawing.Size(786, 367);
-            this.dataGridViewCoach.TabIndex = 6;
-            this.dataGridViewCoach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button3);
@@ -175,6 +175,23 @@ namespace FitnessClub_.NET
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Меню для манипуляции";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(432, 22);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(126, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Поиск по тренерам";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(326, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 7;
             // 
             // button1
             // 
@@ -203,23 +220,6 @@ namespace FitnessClub_.NET
             this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 3;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(432, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Поиск по тренерам";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(326, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 7;
-            // 
             // FitnessClub_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -234,9 +234,9 @@ namespace FitnessClub_.NET
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoach)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoach)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
